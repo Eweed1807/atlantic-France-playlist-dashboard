@@ -34,7 +34,7 @@ st.markdown("""
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\Pruthvi\OneDrive\Desktop\w\project\Atlantic France Top 50 Playlist\Atlantic_France.csv")
+    df = pd.read_csv("Atlantic_France.csv")
     df["date"] = pd.to_datetime(df["date"], dayfirst=True, errors="coerce")
     df = df.dropna(subset=["date", "song"]).sort_values("date")
     df["duration_min"] = (df["duration_ms"] / 60000).round(2)
